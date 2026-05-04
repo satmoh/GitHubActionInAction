@@ -1,14 +1,14 @@
-name: My First Workflow
-on: 
-  push:
+name: My First Workflow # le nom du flux permet d'identifier l'interface GitHub
+on: # definit le(s) déclencheur(s) qui initie(nt) le flux
+  push: # Déclencheur de type WebHooks (événements GitHub)
     branches:
       - main
-  workflow_dispatch: 
+  workflow_dispatch: # déclencheur manuel
 
-jobs:
-  MyFisrtJob:
-    runs-on: ubuntu-latest
-    steps:
+jobs: #Un flux contient un ou plusieurs jobs
+  MyFisrtJob: # nom du job
+    runs-on: ubuntu-latest 
+    steps: # les séquences d'étapes du job
       - run: echo " Hello World!"
       - name: Checkout
         uses: actions/checkout@v6.0.2
